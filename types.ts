@@ -7,6 +7,8 @@ export interface Beat {
   title: string;
   beat_path: string;
   cover_path: string;
+  price: string;
+  tempo: string;
 }
 
 export interface UserDetails {

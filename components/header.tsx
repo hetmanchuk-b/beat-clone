@@ -48,8 +48,8 @@ const Header = ({}) => {
   }
 
   return (
-    <div className="w-full flex justify-between items-center p-4">
-      <div className="flex items-center gap-x-4">
+    <div className="w-full flex sm:justify-between sm:flex-row sm:items-center p-4 flex-col gap-2 justify-start items-start bg-slate-100">
+      <div className="flex items-center gap-x-4 gap-y-1.5 flex-wrap">
         <Link className="text-md" href={'/'}>Home page</Link>
         <Link
           href="/search"

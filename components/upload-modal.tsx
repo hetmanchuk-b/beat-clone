@@ -29,8 +29,10 @@ const UploadModal = () => {
     defaultValues: {
       author: '',
       title: '',
-      song: null,
-      image: null
+      tempo: '',
+      price: '',
+      beat: null,
+      image: null,
     },
   })
 
@@ -109,6 +111,8 @@ const UploadModal = () => {
           user_id: user.id,
           title: values.title,
           author: values.author,
+          tempo: values.tempo,
+          price: values.price,
           cover_path: imageData.path,
           beat_path: beatData.path
         });
@@ -160,13 +164,13 @@ const UploadModal = () => {
             {...register('title', {required: true})}
           />
           <Input
-            placeholder={'Song author'}
+            placeholder={'Beat author'}
             id={'author'}
             disabled={isLoading}
             {...register('author', {required: true})}
           />
           <div>
-            <div className="pb-1">
+            <div className="pb-1 text-sm font-semibold">
               Select a mp3 file
             </div>
             <Input
@@ -178,7 +182,7 @@ const UploadModal = () => {
             />
           </div>
           <div>
-            <div className="pb-1">
+            <div className="pb-1 text-sm font-semibold">
               Select an image
             </div>
             <Input
@@ -188,6 +192,33 @@ const UploadModal = () => {
               accept={'image/*'}
               {...register('image', {required: true})}
             />
+          </div>
+
+          <div className="grid grid-cols-2 gap-2">
+            <div>
+              <div className="pb-1 text-sm font-semibold">
+                Beat tempo, BPM
+              </div>
+              <Input
+                placeholder={'102'}
+                type={'text'}
+                disabled={isLoading}
+                id={'tempo'}
+                {...register('tempo')}
+              />
+            </div>
+            <div>
+              <div className="pb-1 text-sm font-semibold">
+                Price, $
+              </div>
+              <Input
+                placeholder={'19.99'}
+                type={'text'}
+                disabled={isLoading}
+                id={'price'}
+                {...register('price')}
+              />
+            </div>
           </div>
 
           <Button disabled={isLoading} type={'submit'}>

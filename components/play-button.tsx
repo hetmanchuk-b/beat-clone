@@ -17,11 +17,11 @@ const PlayButton: FC<PlayButtonProps> = ({isActive = false}) => {
         rounded-full
         flex
         items-center
-        bg-green-500
+        bg-slate-200
         p-4
         drop-shadow-md
         translate
-        translate-y-1/4
+        -translate-y-1/4
         group-hover:opacity-100
         group-hover:translate-y-0
         hover:scale-110`,
