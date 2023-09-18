@@ -20,7 +20,7 @@ const MediaItem: FC<MediaItemProps> = ({beat, onClick}) => {
       return onClick(beat.id);
     }
 
-    return // TODO: player.setId(beat.id);
+    return player.setId(beat.id);
   };
   return (
     <div

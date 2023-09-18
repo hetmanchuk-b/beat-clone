@@ -1,5 +1,7 @@
 "use client";
 
+// @ts-ignore
+import useSound from "use-sound";
 import {FC, useEffect, useState} from 'react';
 import {Beat} from "@/types";
 import MediaItem from "@/components/media-item";
@@ -7,7 +9,7 @@ import LikeButton from "@/components/like-button";
 import {Icons} from '@/components/icons'
 import PlayerSlider from "@/components/player-slider";
 import usePlayer from "@/hooks/usePlayer";
-import useSound from "use-sound";
+
 
 interface PlayerContentProps {
   beat: Beat;

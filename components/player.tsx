@@ -10,8 +10,8 @@ const Player = () => {
   const {beat} = useGetBeatById(player.activeId);
 
   const beatUrl = useLoadBeatUrl(beat!);
-  console.log('beat url', beatUrl?.data?.publicUrl)
 
+  // @ts-ignore
   if (!beat || !beatUrl || !beatUrl?.data?.publicUrl || !player.activeId) return null;
 
 
