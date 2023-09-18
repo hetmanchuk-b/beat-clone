@@ -17,7 +17,7 @@ const Player = () => {
 
 
   return (
-    <div className="fixed bottom-0 bg-slate-100 w-full py-2 h-[80px] px-4">
+    <div className="fixed bottom-0 bg-slate-200 w-full py-2 h-[80px] px-4">
       <PlayerContent
         key={beatUrl.data.publicUrl}
         beat={beat}

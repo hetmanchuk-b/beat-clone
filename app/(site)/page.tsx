@@ -9,8 +9,7 @@ export default async function Home() {
   const beats = await getBeats();
 
   return (
-    <div>
-      <Library />
+    <div className="p-2">
       <BeatsContent beats={beats} />
     </div>
   )

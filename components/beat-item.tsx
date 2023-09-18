@@ -36,8 +36,8 @@ const BeatItem: FC<BeatItemProps> = ({beat, onClick}) => {
           rounded-md
           overflow-hidden
           gap-x-4
-          bg-neutral-400/5
-          hover:bg-neutral-400/10
+          bg-stone-400/5
+          hover:bg-stone-400/10
           transition
           p-3
         `,

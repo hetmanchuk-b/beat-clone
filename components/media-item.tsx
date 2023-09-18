@@ -25,16 +25,19 @@ const MediaItem: FC<MediaItemProps> = ({beat, onClick}) => {
   return (
     <div
       onClick={handleClick}
-      className={cn(`
-        flex
-        items-center
-        gap-x-3
-        cursor-pointer
-        hover:bg-neutral-400/20
-        w-full
-        p-2
-        rounded-md
-      `, player.activeId === beat.id ? 'bg-neutral-400/20' : '')}
+      className={cn(
+          `
+          flex
+          items-center
+          gap-x-3
+          cursor-pointer
+          hover:bg-stone-300/20
+          w-full
+          p-2
+          rounded-md
+          `,
+          player.activeId === beat.id ? 'bg-stone-300/20' : '',
+        )}
     >
       <div
         className="
