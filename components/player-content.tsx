@@ -9,6 +9,7 @@ import LikeButton from "@/components/like-button";
 import {Icons} from '@/components/icons'
 import PlayerSlider from "@/components/player-slider";
 import usePlayer from "@/hooks/usePlayer";
+import {formatMillisecondsToTime} from "@/lib/utils";
 
 
 interface PlayerContentProps {
@@ -50,7 +51,7 @@ const PlayerContent: FC<PlayerContentProps> = (
     player.setId(previousBeat);
   }
 
-  const [play, {pause, sound}] = useSound(
+  const [play, {pause, sound, duration}] = useSound(
     beatUrl,
     {
       volume,
@@ -108,21 +109,25 @@ const PlayerContent: FC<PlayerContentProps> = (
         </div>
       </div>
 
-      <div className="hidden h-full md:flex justify-center items-center w-full max-w-[722px] gap-x-6">
-        <Icons.stepBack
-          onClick={onPlayPrevious}
-          className="w-6 h-6 cursor-pointer text-slate-800 transition hover:text-slate-600"
-        />
-        <div
-          onClick={handlePlay}
-          className="flex items-center justify-center h-10 w-10 text-slate-800 transition hover:text-slate-600 rounded-full bg-slate-200 p-1 cursor-pointer"
-        >
-          <Icon className="w-6 h-6" />
+      <div className="hidden h-full md:flex flex-col justify-center items-center w-full max-w-[722px] gap-x-6">
+        <div className="flex justify-center items-center w-full gap-x-6">
+          <Icons.stepBack
+            onClick={onPlayPrevious}
+            className="w-6 h-6 cursor-pointer text-slate-800 transition hover:text-slate-600"
+          />
+          <div
+            onClick={handlePlay}
+            className="flex items-center justify-center h-10 w-10 text-slate-800 transition hover:text-slate-600 rounded-full bg-slate-200 p-1 cursor-pointer"
+          >
+            <Icon className="w-6 h-6" />
+          </div>
+          <Icons.stepForward
+            onClick={onPlayNext}
+            className="w-6 h-6 cursor-pointer text-slate-800 transition hover:text-slate-600"
+          />
         </div>
-        <Icons.stepForward
-          onClick={onPlayNext}
-          className="w-6 h-6 cursor-pointer text-slate-800 transition hover:text-slate-600"
-        />
+
+        <div className="text-slate-900">{formatMillisecondsToTime(duration)}</div>
       </div>
 
       <div className="hidden md:flex w-full justify-end pr-2">
